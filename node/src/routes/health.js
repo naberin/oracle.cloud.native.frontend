@@ -1,11 +1,12 @@
 const {time_now} = require("../utils/datetime");
 
-var router = require('express').Router();
+let router = require('express').Router();
 
 router.use('/', function (req, res) {
 
-    let timestamp = time_now();
-    return res.status(200).send({"status": "UP", "requested": timestamp});
+    const now = time_now();
+    console.log(`[${now}] GET /health - 200 OK`)
+    return res.status(200).send({"status": "UP", "request": now});
 
 });
 

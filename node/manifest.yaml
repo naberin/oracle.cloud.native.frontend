@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scoreboard-deployment
+  labels:
+    app: scoreboard
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: scoreboard
+  template:
+    metadata:
+      labels:
+        app: scoreboard
+    spec:
+      containers:
+      - name: scoreboard
+        image: scoreboard:latest
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: scoreboard-service
+spec:
+  selectors:
+    app: scoreboard
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

@@ -5,12 +5,8 @@ const version = process.env.VERSION ? process.env.VERSION : 'Unknown';
 
 const healthRoutes = require('./routes/health');
 
-// const blogRoutes = require('');
-// const newsRoutes = require('');
-
 app.use('/health', healthRoutes);
-// app.use('/api/blogs', blogRoutes);
-// app.use('/api/news', newsRoutes);
+
 
 app.listen(port, () => {
     console.log(

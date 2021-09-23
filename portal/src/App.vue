@@ -1,6 +1,6 @@
 <template>
-  <main id="app">
-    <Header/>
+  <main id="app" class="flex flex-col">
+    <Header style="flex-grow: 1"/>
     <Hero style="flex-grow: 9"/>
   </main>
 </template>
@@ -17,15 +17,11 @@ export default {
 
 <style>
 
-html, body {
+html, body, main {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-}
-
-div {
-  box-sizing: border-box;
 }
 
 .flex {
@@ -42,6 +38,22 @@ div {
 }
 .flex.justify-between {
   justify-content: space-between;
+}
+.flex.justify-end {
+  justify-content: flex-end;
+}
+.flex > * {
+  flex-basis: 0;
+}
+.flex .flex-grow-9 {
+  flex-grow: 9;
+}
+
+.flex .flex-grow-5 {
+  flex-grow: 5;
+}
+.flex .flex-grow-2 {
+  flex-grow: 2;
 }
 
 @media only screen and (max-width: 499px) {
@@ -82,6 +94,33 @@ div {
 
 .container {
   margin: 0 auto;
+}
+
+.app-button {
+  transition: .5s background-color ease-in;
+  font-weight: bold;
+  padding: 0 19px;
+  white-space: nowrap;
+}
+
+.app-button.dark {
+  background-color: #292929;
+  color: #dddfdf;
+  border: 1px solid #555;
+}
+.app-button.dark:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.app-button.shade {
+  background-color: #292929;
+  color: #dddfdf;
+  border: 1px solid #504275;
+}
+.app-button.shade:hover {
+  background-color: #504275;
+  cursor: pointer;
 }
 
 </style>

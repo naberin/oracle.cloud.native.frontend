@@ -1,15 +1,17 @@
 <template>
   <main id="app">
     <Header/>
+    <Hero style="flex-grow: 9"/>
   </main>
 </template>
 
 <script>
 
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 export default {
   name: 'App',
-  components: {Header}
+  components: {Header, Hero}
 }
 </script>
 

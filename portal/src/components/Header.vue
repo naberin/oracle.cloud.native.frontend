@@ -5,7 +5,7 @@
         <h3>The Scoreboard</h3>
       </div>
       <div class="buttons flex-grow-2 flex flex-row justify-end">
-        <button class="app-button dark">Sign In</button>
+<!--        <button class="app-button dark">Sign In</button>-->
         <button class="app-button shade">Subscribe</button>
       </div>
     </div>

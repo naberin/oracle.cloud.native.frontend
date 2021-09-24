@@ -1,17 +1,16 @@
 <template>
   <main id="app" class="flex flex-col">
     <Header style="flex-grow: 1"/>
-    <Hero style="flex-grow: 9"/>
+    <router-view></router-view>
   </main>
 </template>
 
 <script>
 
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 export default {
   name: 'App',
-  components: {Header, Hero}
+  components: {Header}
 }
 </script>
 

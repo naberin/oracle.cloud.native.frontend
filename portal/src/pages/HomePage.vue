@@ -4,9 +4,6 @@
       <section id="games-count-banner" class="banner banner-lg">
         <div class="container allow-overflow">
 
-          <Scorecard :defender="defender" :challenger="challenger">
-
-          </Scorecard>
         </div>
       </section>
     </Hero>
@@ -15,15 +12,12 @@
 
 <script>
 import Hero from "@/components/Hero";
-import Scorecard from "@/components/Scorecard";
 
 export default {
   name: "HomePage",
-  components: {Scorecard, Hero},
+  components: {Hero},
   data: function(){
     return{
-      defender: {"name": "USA", gameScore: "24", streakScore: "02"},
-      challenger: {"name": "Japan", gameScore: "28", streakScore: "03"},
     }
   }
 }

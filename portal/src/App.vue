@@ -1,6 +1,6 @@
 <template>
   <main id="app" class="flex flex-col">
-    <Header class="flex-grow-1"/>
+    <Header class="flex-grow-1" :selected-sport="selectedSport"/>
     <router-view class="flex-grow-9"></router-view>
   </main>
 </template>
@@ -10,7 +10,12 @@
 import Header from "@/components/Header";
 export default {
   name: 'App',
-  components: {Header}
+  components: {Header},
+  data: function() {
+    return {
+      selectedSport: "Table Tennis"
+    }
+  }
 }
 </script>
 

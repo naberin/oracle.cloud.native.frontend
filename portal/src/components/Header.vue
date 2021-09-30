@@ -2,11 +2,11 @@
   <header class="app-header">
     <div class="container flex flex-row justify-between">
       <div class="page-identifier flex-grow-5">
-        <h3><span class="title">The Scoreboard</span></h3>
+        <h3><span class="title">The Scoreboard</span> | <span class="sport">{{ selectedSport }}</span> </h3>
       </div>
       <div class="buttons flex-grow-2 flex flex-row justify-end">
 <!--        <button class="app-button dark">Sign In</button>-->
-        <button class="app-button shade">Subscribe</button>
+<!--        <button class="app-button shade">Subscribe</button>-->
       </div>
     </div>
   </header>
@@ -15,7 +15,10 @@
 <script>
 export default {
   name: "Header",
-  components: {}
+  components: {},
+  props: {
+    selectedSport: String,
+  }
 }
 </script>
 
@@ -34,10 +37,15 @@ export default {
     width: 200px;
   }
 
+  .app-header .page-identifier .sport {
+    font-weight: lighter;
+  }
+
   .app-header .page-identifier .title {
     transition: .5s color;
-
+    font-weight: bolder;
   }
+
   .app-header .page-identifier .title:hover {
     cursor: pointer;
     color: #fff;

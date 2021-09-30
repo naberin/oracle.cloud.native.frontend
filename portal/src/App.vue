@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="flex flex-col">
-    <Header style="flex-grow: 1"/>
-    <router-view></router-view>
+    <Header class="flex-grow-1"/>
+    <router-view class="flex-grow-9"></router-view>
   </main>
 </template>
 
@@ -54,6 +54,9 @@ html, body, main {
 .flex .flex-grow-2 {
   flex-grow: 2;
 }
+.flex .flex-grow-1 {
+  flex-grow: 1;
+}
 
 @media only screen and (max-width: 499px) {
   .container {
@@ -95,6 +98,14 @@ html, body, main {
   margin: 0 auto;
 }
 
+.allow-overflow {
+  box-sizing: content-box;
+}
+
+section.page {
+  height: 100%;
+}
+
 .app-button {
   transition: .5s color;
   font-weight: bold;
@@ -118,7 +129,7 @@ html, body, main {
   border: 1px solid #652efd;
 }
 .app-button.shade:hover {
-  background-color: #652efd;
+  background: linear-gradient(to bottom right, #652efd, #8156ff);
   color: #fff;
   cursor: pointer;
 }

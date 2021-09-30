@@ -1,18 +1,7 @@
 <template>
-  <section class="hero flex-grow-9">
+  <section class="hero">
     <div class="flex flex-col" style="height: 100%">
-      <div class="banner">
-        <div class="container" style="height: 100%">
-
-        </div>
-      </div>
-
-
-      <div class="paper flex-grow-5">
-        <div class="container">
-
-        </div>
-      </div>
+        <slot></slot>
     </div>
   </section>
 </template>
@@ -29,6 +18,7 @@ export default {
 <style scoped>
   section.hero {
     width: 100%;
+    height: 100%;
     background-color: #dddfdf;
   }
 

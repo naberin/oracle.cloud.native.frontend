@@ -96,7 +96,7 @@ html, body, main {
 }
 
 .app-button {
-  transition: .5s background-color ease-in;
+  transition: .5s color;
   font-weight: bold;
   padding: 0 19px;
   white-space: nowrap;
@@ -114,11 +114,12 @@ html, body, main {
 
 .app-button.shade {
   background-color: #292929;
-  color: #dddfdf;
-  border: 1px solid #504275;
+  color: #ddd;
+  border: 1px solid #652efd;
 }
 .app-button.shade:hover {
-  background-color: #504275;
+  background-color: #652efd;
+  color: #fff;
   cursor: pointer;
 }
 

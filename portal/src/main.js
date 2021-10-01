@@ -2,7 +2,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from "@/routes/router";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+
+
+/* Authentication */
+function isUserAuthenticated() {
+  return false
+}
+
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !isUserAuthenticated()) next({ name: 'login' })
+  else next()
+})
 
 new Vue({
   render: h => h(App),

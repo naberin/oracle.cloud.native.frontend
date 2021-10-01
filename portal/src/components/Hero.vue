@@ -19,7 +19,7 @@ export default {
   section.hero {
     width: 100%;
     height: 100%;
-    background-color: #dddfdf;
+    background-color: #292929;
   }
 
   section.hero .container {

@@ -46,9 +46,6 @@ export default {
   padding: 64px 32px;
   margin: 0 9px;
   border-radius: 9px 0 9px 0;
-  -moz-box-shadow: 0 0 10px #292929;
-  -webkit-box-shadow: 0 0 10px #292929;
-  box-shadow: 0 0 10px #292929;
   min-width: 180px;
   background: linear-gradient(to bottom right, #652efd, #8156ff);
 }

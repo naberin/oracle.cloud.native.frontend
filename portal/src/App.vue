@@ -53,9 +53,7 @@ html, body, main {
 .flex.justify-end {
   justify-content: flex-end;
 }
-.flex > * {
-  flex-basis: 0;
-}
+
 .flex .flex-grow-9 {
   flex-grow: 9;
 }
@@ -66,7 +64,7 @@ html, body, main {
 .flex .flex-grow-2 {
   flex-grow: 2;
 }
-.flex .flex-grow-1 {
+.flex .flex-grow-1, .flex > * {
   flex-grow: 1;
 }
 
@@ -107,6 +105,11 @@ html, body, main {
 }
 
 .container {
+  width: 100%;
+}
+
+div.centered,
+.container {
   margin: 0 auto;
 }
 
@@ -144,6 +147,20 @@ section.page {
   background: linear-gradient(to bottom right, #652efd, #8156ff);
   color: #fff;
   cursor: pointer;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+.top-pad-m {
+  padding-top: 45px;
+}
+
+.shadowed {
+  -moz-box-shadow: 0 0 10px #292929;
+  -webkit-box-shadow: 0 0 10px #292929;
+  box-shadow: 0 0 10px #1d1d1d;
 }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <main id="app" class="flex flex-col">
-    <Header class="flex-grow-1" :selected-sport="selectedSport"/>
+    <Header v-if="headerShouldBeDisplayed" class="flex-grow-1" :selected-sport="selectedSport"/>
     <router-view class="flex-grow-9"></router-view>
   </main>
 </template>
@@ -13,7 +13,14 @@ export default {
   components: {Header},
   data: function() {
     return {
-      selectedSport: "Table Tennis"
+      selectedSport: null
+    }
+  },
+  computed: {
+    headerShouldBeDisplayed: function () {
+      let headerExcludeList = ["login"]
+      return !(headerExcludeList.includes(this.$route.name));
+
     }
   }
 }

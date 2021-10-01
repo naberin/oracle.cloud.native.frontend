@@ -2,7 +2,7 @@
   <header class="app-header">
     <div class="container flex flex-row justify-between">
       <div class="page-identifier flex-grow-5">
-        <h3><span class="title">The Scoreboard</span> | <span class="sport">{{ selectedSport }}</span> </h3>
+        <h3><span class="title">The Scoreboard</span> <span v-if="selectedSport" class="sport">| {{ selectedSport }}</span> </h3>
       </div>
       <div class="buttons flex-grow-2 flex flex-row justify-end">
 <!--        <button class="app-button dark">Sign In</button>-->

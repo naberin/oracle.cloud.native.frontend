@@ -12,8 +12,11 @@ function isUserAuthenticated() {
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'login' && !isUserAuthenticated()) next({ name: 'login' })
+  if (to.name !== 'login' && !isUserAuthenticated()) {
+    next({name: 'login', query: {"next": to.name}})
+  }
   else next()
+
 })
 
 new Vue({

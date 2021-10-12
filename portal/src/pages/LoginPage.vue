@@ -28,6 +28,7 @@
                   type="button"
                   class="button"
                   value="Sign In"
+                  @click="navigateTo"
               >
             </div>
             <div class="login-bottom-information">
@@ -50,7 +51,20 @@ import Hero from "@/components/Hero";
 
 export default {
   name: "LoginPage",
-  components: {Hero}
+  components: {Hero},
+  data() {
+    return {
+      redirect: null
+    }
+  },
+  created() {
+    this.redirect = this.$route.query.next ? this.$route.query.next : 'home'
+  },
+  methods: {
+    navigateTo() {
+      this.$router.push({ name: this.redirect });
+    }
+  }
 }
 </script>
 

@@ -6,6 +6,9 @@
         <div class="top-pad-m flex flex-col">
           <div class="title centered"><h2>The Scorecard</h2></div>
           <div class="login-modal centered justify-center shadowed">
+            <Alert v-if="authenticationError" class="login-top"
+                alert-message="Incorrect username or password."
+                kind="error" />
             <div class="user-details flex flex-col">
               <span class="label"><label for="username">Username</label></span>
               <input
@@ -21,6 +24,7 @@
                   id="pwd"
                   type="password"
                   name="password"
+                  @change="resetErrors()"
                   >
 
               <input
@@ -28,7 +32,7 @@
                   type="button"
                   class="button"
                   value="Sign In"
-                  @click="navigateTo"
+                  @click="submitAndNavigateTo"
               >
             </div>
             <div class="login-bottom-information">
@@ -48,21 +52,29 @@
 
 <script>
 import Hero from "@/components/Hero";
+import Alert from "@/components/Alert";
 
 export default {
   name: "LoginPage",
-  components: {Hero},
+  components: {Alert, Hero},
   data() {
     return {
-      redirect: null
+      redirect: null,
+      authenticationError: false
     }
   },
   created() {
     this.redirect = this.$route.query.next ? this.$route.query.next : 'home'
   },
   methods: {
-    navigateTo() {
-      this.$router.push({ name: this.redirect });
+    submitAndNavigateTo() {
+      this.$router.push({ name: this.redirect }).catch(() => {
+        this.authenticationError = true;
+      });
+    },
+    resetErrors() {
+      console.log("Resetting errors..");
+      this.authenticationError = false;
     }
   }
 }
@@ -126,6 +138,14 @@ export default {
 
 .login-modal #signin {
   margin-top: 19px;
+}
+
+#app .login-modal .login-top.alert,
+#app .login-modal .login-top.alert .error
+{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  text-align: center;
 }
 
 .login-bottom-information {

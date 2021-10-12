@@ -149,6 +149,21 @@ section.page {
   cursor: pointer;
 }
 
+#app .alert {
+  border-radius: inherit;
+}
+
+#app .alert .error {
+  font-family: Tahoma, sans-serif;
+  padding: 12px;
+  border-radius: inherit;
+}
+
+#app .alert .error {
+  background-color: #fdcec9;
+  color: #803535;
+}
+
 .right-aligned {
   text-align: right;
 }
